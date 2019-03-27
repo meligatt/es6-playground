@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "babel": "babel --presets env main.js -o build/main.bundle.js",
+    "babel": "babel main.js -o build/main.bundle.js",
     "start": "http-server"
   },
   "author": "melissa gattoni",
