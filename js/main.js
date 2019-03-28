@@ -142,3 +142,17 @@
 // console.log('monthlyPay >>>', monthlyPay);
 // console.log('loremIpsum >>>', loremIpsum);
 // console.log('------------------------------------');
+
+
+// ******************
+// using Classes with getters
+// ******************
+
+// import { Mortgage } from './Mortgage';
+// const mortgage = new Mortgage(2000, 4, 12);
+
+// const monthlyPayment = mortgage.monthlyPayment;
+// console.log('monthlyPayment >>> ', monthlyPayment);
+
+// const amortization = mortgage.amortization;
+// console.log('amortization >>> ', amortization);
