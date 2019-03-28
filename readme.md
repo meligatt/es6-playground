@@ -1,17 +1,25 @@
 ## es6 playground:
 
-packages installed:
-- babel-cli
-- babel-core
-- babel-preset-env https://babeljs.io/docs/en/env/
+### packages installed:
+- building code using babel:
+ - babel-cli
+ - babel-core
+ - babel-preset-env https://babeljs.io/docs/en/env/
 
-## concepts explored:
+- building code using webpack:
+ - webpack
+ - webpack-cli
+
+### concepts explored:
 - var vs let
 - destructuring arrays and objects
 - .bind() to give context for `this` 
 - arrow function and `this` (bound lexically): uses the context of the enclosing function.
 - Class and binding.
+- modules.
+- promises.
  
 Resources: 
+- http://ccoenraets.github.io/es6-tutorial
 - https://medium.freecodecamp.org/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb
 - https://codepen.io/meligatt/pen/BPVqgG

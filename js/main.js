@@ -1,3 +1,6 @@
+console.log('------------------------------------');
+console.log('es6 examples');
+console.log('------------------------------------');
 // ******************
 // FEATURE: var vs let
 // var: function-scoped
@@ -113,21 +116,21 @@
 // ******************
 // Literal object with arrow functions methods
 // ******************
-// var name = 'kenobi';
+var name = 'kenobi (global)';
 
-// var Padawan = {
-//   name: 'ahsoka',
-//   lastName: 'Tano',
-//   displayName: () => {
-//     console.log(this);
-//     console.log(this.name);
-//   },
-//   displayLastName: function(){
-//     console.log(this);
-//     console.log(this.lastName);
-//   }
-// };
+var Padawan = {
+  name: 'ahsoka (object)',
+  lastName: 'Tano (object)',
+  displayName: () => {
+    console.log(this);
+    console.log(this.name);
+  },
+  displayLastName: function(){
+    console.log(this);
+    console.log(this.lastName);
+  }
+};
 
 
-// Padawan.displayName();
-// Padawan.displayLastName();
+Padawan.displayName();
+Padawan.displayLastName();

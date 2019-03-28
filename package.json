@@ -4,18 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "babel": "babel main.js -o build/main.bundle.js",
-    "start": "http-server"
+    "start": "http-server",
+    "webpack": "webpack"
   },
   "author": "melissa gattoni",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "http-server": "^0.11.1"
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.15.3",
+    "http-server": "^0.11.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
-  "dependencies": {
-    "eslint": "^5.15.3"
-  }
+  "dependencies": {}
 }
