@@ -4,11 +4,10 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/js/app.js',
-    films: './src/js/films.js',
-    game: './src/js/game.js'
+    app: './src/snippets/js/app.js',
+    films: './src/films/js/films.js',
+    game: './src/game/js/game.js'
   },
-  
   output:{
     path: path.resolve(__dirname, 'build'),
     filename: '[name].bundle.js'
