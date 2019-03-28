@@ -28,6 +28,25 @@
     "semi": [
       "error",
       "always"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "space-before-blocks": [
+      "error",
+      {
+        "functions": "always",
+        "keywords": "never",
+        "classes": "never"
+      }
+    ],
+    "object-curly-spacing": [
+      2,
+      "always"
     ]
   }
 }
