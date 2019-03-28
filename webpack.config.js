@@ -5,7 +5,8 @@ module.exports = {
   mode: 'development',
   entry: {
     app: './src/js/app.js',
-    films: './src/js/films.js'
+    films: './src/js/films.js',
+    game: './src/js/game.js'
   },
   
   output:{
