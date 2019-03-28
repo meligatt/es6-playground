@@ -18,7 +18,7 @@
 - Class and binding.
 - modules.
 - classes using getters
-- promises.
+- promises using fetch().
  
 Resources: 
 - http://ccoenraets.github.io/es6-tutorial

@@ -156,3 +156,7 @@
 
 // const amortization = mortgage.amortization;
 // console.log('amortization >>> ', amortization);
+
+// ******************
+// using Promises
+// ******************
