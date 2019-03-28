@@ -1,6 +1,3 @@
-console.log('------------------------------------');
-console.log('es6 examples');
-console.log('------------------------------------');
 // ******************
 // FEATURE: var vs let
 // var: function-scoped
@@ -116,21 +113,32 @@ console.log('------------------------------------');
 // ******************
 // Literal object with arrow functions methods
 // ******************
-var name = 'kenobi (global)';
+// var name = 'kenobi (global)';
 
-var Padawan = {
-  name: 'ahsoka (object)',
-  lastName: 'Tano (object)',
-  displayName: () => {
-    console.log(this);
-    console.log(this.name);
-  },
-  displayLastName: function(){
-    console.log(this);
-    console.log(this.lastName);
-  }
-};
+// var Padawan = {
+//   name: 'ahsoka (object)',
+//   lastName: 'Tano (object)',
+//   displayName: () => {
+//     console.log(this);
+//     console.log(this.name);
+//   },
+//   displayLastName: function(){
+//     console.log(this);
+//     console.log(this.lastName);
+//   }
+// };
+// Padawan.displayName();
+// Padawan.displayLastName();
 
 
-Padawan.displayName();
-Padawan.displayLastName();
+// ******************
+// using modules
+// ******************
+// import * as calculateModule from './calculateModule';
+
+// const monthlyPay = calculateModule.calculateMonthlyPayment(1000, 12, 5);
+// const loremIpsum = calculateModule.calculateLoremIpsum();
+// console.log('----------------calculateModule--------------------');
+// console.log('monthlyPay >>>', monthlyPay);
+// console.log('loremIpsum >>>', loremIpsum);
+// console.log('------------------------------------');
