@@ -34,4 +34,4 @@ service.findAll()
     });
     document.getElementById('films').innerHTML = html;
   })
-  .catch((e)=> console.log('error >>>', e));
+  .catch((e) => console.log('error >>>', e));

@@ -11,7 +11,7 @@ let data = { 'films': [
     'name': 'star wars The return of the jedi',
     'stars': '4',
   }
-]};
+] };
 export let findAll = () => new Promise((resolve, reject) => {
   if (data){
     resolve(data);
