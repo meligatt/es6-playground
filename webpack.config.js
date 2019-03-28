@@ -24,14 +24,8 @@ module.exports = {
       }
     ]
   },
-  plugins:[
-    new webpack.HotModuleReplacementPlugin()
-  ],
   stats: {
     colors: true
   },
   devtool: 'source-map',
-  devServer:{
-    hot: true
-  }
 };
