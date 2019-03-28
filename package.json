@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server",
+    "start": "webpack-dev-server",
     "webpack": "webpack"
   },
   "author": "melissa gattoni",
@@ -15,9 +15,9 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.5",
     "eslint": "^5.15.3",
-    "http-server": "^0.11.1",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {}
 }

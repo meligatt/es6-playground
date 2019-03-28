@@ -1,11 +1,11 @@
 var path = require('path');
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
   entry: {
-    app: './js/main.js',
-    films: './js/films.js'
+    app: './src/js/app.js',
+    films: './src/js/films.js'
   },
   
   output:{
@@ -24,8 +24,14 @@ module.exports = {
       }
     ]
   },
+  plugins:[
+    new webpack.HotModuleReplacementPlugin()
+  ],
   stats: {
     colors: true
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  devServer:{
+    hot: true
+  }
 };
