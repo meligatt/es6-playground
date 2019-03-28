@@ -1,7 +1,5 @@
 console.log('------------------------------------');
 console.log('examples of es6 features');
-console.log('yayyyy');
-console.log('more yayyyy');
 console.log('------------------------------------');
 // ******************
 // FEATURE: var vs let
