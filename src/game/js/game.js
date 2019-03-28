@@ -1,5 +1,8 @@
+import '../css/game.scss';
 
-// //(WIP)(WIP)(WIP)(WIP)(WIP)(WIP)(WIP)(WIP)(WIP)
+console.log('------------------------------------');
+console.log('game js');
+console.log('------------------------------------');
 
 // // initialState , thi sobject should be freeze.
 // const initialState = {
