@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     app: './src/snippets/js/app.js',
     films: './src/films/js/films.js',
-    game: './src/game/js/game.js'
+    game: './src/game/js/game.js',
+    arrays: './src/arrays/js/arrays.js'
   },
   output:{
     path: path.resolve(__dirname, 'build'),
