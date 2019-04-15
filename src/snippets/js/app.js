@@ -1,6 +1,3 @@
-console.log('------------------------------------');
-console.log('examples of es6 features');
-console.log('------------------------------------');
 // ******************
 // FEATURE: var vs let
 // var: function-scoped
@@ -151,7 +148,7 @@ console.log('------------------------------------');
 // using Classes with getters
 // ******************
 
-import { Mortgage } from './Mortgage';
+import { Mortgage } from './classes/Mortgage';
 const mortgage = new Mortgage(2000, 4, 12);
 
 const monthlyPayment = mortgage.monthlyPayment;
