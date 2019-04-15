@@ -4,10 +4,14 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/snippets/js/app.js',
+    arrays: './src/arrays/js/arrays.js',
     films: './src/films/js/films.js',
-    game: './src/game/js/game.js',
-    arrays: './src/arrays/js/arrays.js'
+    form001: './src/form001/js/index.js',
+    functions: './src/functions/js/index.js',
+    game001: './src/game001/js/game.js',
+    game002: './src/game002/js/index.js',
+    game003: './src/game003/js/index.js',
+    snippets: './src/snippets/js/app.js'
   },
   output:{
     path: path.resolve(__dirname, 'build'),
