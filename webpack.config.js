@@ -4,11 +4,12 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: {
+    a11y: './src/a11y/js/index.js',
     arrays: './src/arrays/js/arrays.js',
     films: './src/films/js/films.js',
     form001: './src/form001/js/index.js',
     functions: './src/functions/js/index.js',
-    game001: './src/game001/js/game.js',
+    game001: './src/game001/js/index.js',
     game002: './src/game002/js/index.js',
     game003: './src/game003/js/index.js',
     snippets: './src/snippets/js/app.js'

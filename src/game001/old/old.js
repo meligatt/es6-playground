@@ -1,15 +1,11 @@
 import '../css/game.scss';
 
-console.log('------------------------------------');
-console.log('game js');
-console.log('------------------------------------');
-
 // // initialState , thi sobject should be freeze.
 // const initialState = {
 //   // questions: [],
 //   // questionIndexTracker: -1,
 //   correct: 0,
-//   wrong:0,  
+//   wrong:0,
 //   userAnswerTracker: [],
 //   characterJourneyIndex: -1,
 //   planetTotal: 6,
@@ -53,27 +49,27 @@ console.log('------------------------------------');
 // function CounterModule(){
 //   let questionIndexTracker = -1;
 //   let correctCounter = 0;
-//   let wrongCounter = 0;  
-  
+//   let wrongCounter = 0;
+
 //   function incrementQuestionIndexTracker(){
 //     questionIndexTracker++;
 //     return questionIndexTracker;
 //   }
-  
+
 //   function incrementCorrectCounter(){
 //     correctCounter++;
 //     return correctCounter;
 //   }
-  
+
 //   function incrementWrongCounter(){
 //     wrongCounter++;
 //     return wrongCounter;
 //   }
-  
+
 //   function getQuestionIndexTracker(){
 //     return questionIndexTracker;
 //   }
-  
+
 //   function getWrongCounter(){
 //     return wrongCounter;
 //   }
@@ -81,7 +77,7 @@ console.log('------------------------------------');
 //   function getCorrectCounter(){
 //     return correctCounter;
 //   }
-  
+
 
 //   return {
 //     incrementQuestionIndexTracker: incrementQuestionIndexTracker,
@@ -93,20 +89,20 @@ console.log('------------------------------------');
 //   }
 // }
 
-// // ------------------------------------------------      
+// // ------------------------------------------------
 
-// /*    
+// /*
 // function questionIndexTrackerOuter(){
 //   let counter = initialState.questionIndexTracker;
 //   return function Inner(){
 //     fetchData()
-//       .then((data) => { 
+//       .then((data) => {
 
 //       console.log(data)
 //         const $containerLevel1 = document.querySelector('.container--level-1');
 
 //         $containerLevel1.setAttribute('style', 'display: block;');
-//         $containerLevel1.classList.add('container--level-1--fade-in');     
+//         $containerLevel1.classList.add('container--level-1--fade-in');
 
 //         counter++;
 //         console.log(counter);
@@ -115,7 +111,7 @@ console.log('------------------------------------');
 //       .catch((error) => {
 //         console.log ('error message: ', error.message);
 //       });
-//   }  
+//   }
 // } */
 
 // // ------------------------------------------------
@@ -124,35 +120,35 @@ console.log('------------------------------------');
 // // $btnStart.addEventListener('click', questionIndexTrackerOuter())
 
 // // // refactor
-// $btnStart.addEventListener('click', () => {    
+// $btnStart.addEventListener('click', () => {
 //     questionsModule.fetchQuestions()
 //       .then((response) => {
 //       questionsModule.setQuestions(response);
-      
+
 //       const $containerLevel0 = document.querySelector('.container--level-0');
 //       $containerLevel0.classList.add('container--level-0--fade-out');
 
 //     setTimeout(() => {
 //           $containerLevel0.setAttribute('style', 'display:none');
-//         }, 200);  
+//         }, 200);
 
 //       const timerId = setInterval(() => {
 //         if ($containerLevel0.style.display === 'none'){
 //           const $containerLevel1 = document.querySelector('.container--level-1');
 //           $containerLevel1.setAttribute('style', 'display: block;');
 //           setTimeout(() => {
-//             $containerLevel1.classList.add('container--level-1--fade-in');          
-//           }, 200);  
+//             $containerLevel1.classList.add('container--level-1--fade-in');
+//           }, 200);
 //           clearInterval(timerId);
 //           } else {
 //             console.log($containerLevel0.style.display === 'none')
 //           }
-//       }, 200);        
+//       }, 200);
 
-       
+
 
 //       counterModule.incrementQuestionIndexTracker();
- 
+
 //       const questionsArray = questionsModule.getQuestions();
 //       // renderScene(newState.characterJourneyIndex);
 //       // renderQuestion($questionDiv, $alternatives, newState.questions[newState.questionIndexTracker]);
@@ -174,8 +170,8 @@ console.log('------------------------------------');
 
 // //   if(hasMissionFinished(characterJourneyArray) === false){
 // //     if(state.questionIndexTracker <= (state.planetTotal - 1)){
-// //       renderQuestion($questionDiv, $alternatives, state.questions[state.questionIndexTracker]);  
-// //       renderScene(characterJourneyArray);   
+// //       renderQuestion($questionDiv, $alternatives, state.questions[state.questionIndexTracker]);
+// //       renderScene(characterJourneyArray);
 // //      } else {
 // //        console.log('💥💥you ran out of chances! 💥💥');
 // //         $btnNext.disabled = true;
@@ -187,7 +183,7 @@ console.log('------------------------------------');
 // //     $btnNext.disabled = true;
 // //     $btnNext.className = 'btn-disabled';
 // //     renderScene(characterJourneyArray);
-// //   } 
+// //   }
 
 
 // });
@@ -199,19 +195,19 @@ console.log('------------------------------------');
 //   if (index === (characterJourneyArray.length - 1) ){
 //     return true;
 //   }
-//   return false;    
+//   return false;
 // }
 
 // // ------------------------------------------------
 // const setCharacterJourney = (state) => {
-//   const positionInJourney = state.correct;  
+//   const positionInJourney = state.correct;
 //   return positionInJourney;
 // }
 
 // // ------------------------------------------------
 
 // const getCurrentCharacterPosition = (characterJourneyArray) => {
-//   const index = characterJourneyArray.findIndex((elem) => elem === 1 );  
+//   const index = characterJourneyArray.findIndex((elem) => elem === 1 );
 //   return index;
 // }
 
@@ -233,9 +229,9 @@ console.log('------------------------------------');
 //   // clean scene
 //   if($planets.hasChildNodes()){
 //      while($planets.firstChild){
-//       $planets.removeChild($planets.firstChild);  
-//      }    
-//   } 
+//       $planets.removeChild($planets.firstChild);
+//      }
+//   }
 
 //   // append character outside a planet when caracter does not have position in array yet.
 //   if(currentCharacterPosition === -1){
@@ -250,17 +246,17 @@ console.log('------------------------------------');
 //     $planet.setAttribute('class', 'planet');
 
 //     if((i+1) === (state.planetTotal)) {
-//       $planets.appendChild($planetEnd);  
+//       $planets.appendChild($planetEnd);
 //     } else {
-//       $planets.appendChild($planet);  
+//       $planets.appendChild($planet);
 //     }
 
 //     if(currentCharacterPosition === i ){
 //       $planet.appendChild($character);
-//     } 
-//    }  
+//     }
+//    }
 
-//   // render character when reached last planet  
+//   // render character when reached last planet
 //   if(currentCharacterPosition === (state.planetTotal - 1)){
 //     $planetEnd.appendChild($character);
 //   }
@@ -270,22 +266,22 @@ console.log('------------------------------------');
 // // ------------------------------------------------
 
 // const renderQuestion = ($questionDiv, $alternatives, item) => {
-//   insertItemToDom($questionDiv, $alternatives, item); 
+//   insertItemToDom($questionDiv, $alternatives, item);
 // }
 
 // // ------------------------------------------------
 
-// const cleanTriviaForm = ($questionDiv, $alternatives) => { 
+// const cleanTriviaForm = ($questionDiv, $alternatives) => {
 //   if ($questionDiv.hasChildNodes()) {
 //     const questionChildren = $questionDiv.childNodes;
 //     for (let i = 0; i < questionChildren.length; i++) {
 //       $questionDiv.removeChild(questionChildren[i]);
 //     }
-//   }  
+//   }
 //   if($alternatives.hasChildNodes()){
 //      while($alternatives.firstChild){
-//         $alternatives.removeChild($alternatives.firstChild);  
-//      }    
+//         $alternatives.removeChild($alternatives.firstChild);
+//      }
 //   }
 // }
 
@@ -302,13 +298,13 @@ console.log('------------------------------------');
 
 //     // remove others
 //       const $allAlternativeLi = document.querySelectorAll(".alternative--selected");
-//       if ($allAlternativeLi.length > 0){ 
+//       if ($allAlternativeLi.length > 0){
 //         $allAlternativeLi.forEach((item) => {
 //           item.classList.remove('alternative--selected');
-//         })          
+//         })
 //       }
 
-//     // add class 'selected' to the alternative div 
+//     // add class 'selected' to the alternative div
 //     const $currentAlternativeSelected = document.querySelector(`.alternative-${alternativeSelectedId}`);
 //     $currentAlternativeSelected.classList.add('alternative--selected');
 //   };
@@ -318,10 +314,10 @@ console.log('------------------------------------');
 // const insertItemToDom = ($questionDiv, $alternatives, item) => {
 //   cleanTriviaForm($questionDiv, $alternatives);
 
-//   // question  
-//   const $itemQuestion = document.createElement('p'); 
+//   // question
+//   const $itemQuestion = document.createElement('p');
 //   $itemQuestion.textContent = `${state.questionIndexTracker}) ${item.question}`;
-//   $questionDiv.appendChild($itemQuestion);  
+//   $questionDiv.appendChild($itemQuestion);
 
 
 //   // alternatives
@@ -337,9 +333,9 @@ console.log('------------------------------------');
 //     const currentQuestionSelectedId  = $currentAlternativeSelected.id;
 //     const alternativeSelectedId = i;
 
-//     //create a closure on each iteration, so the conts passed are in the outer scope of the returned fn 
-//     $currentAlternativeSelected.addEventListener('click', selectAlternativeHandler(event, currentQuestionSelectedId, alternativeSelectedId));    
-//   }); 
+//     //create a closure on each iteration, so the conts passed are in the outer scope of the returned fn
+//     $currentAlternativeSelected.addEventListener('click', selectAlternativeHandler(event, currentQuestionSelectedId, alternativeSelectedId));
+//   });
 // }
 
 // // ------------------------------------------------
