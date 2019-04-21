@@ -1,4 +1,5 @@
-// const $buttonNext = document.querySelector('#next');
+const $buttonNext = document.querySelector('#next');
+
 const BOARD_WIDTH = 5;
 const initialState = {
   currentPosition: -1,
@@ -28,43 +29,16 @@ const setState = (obj, callback) => {
 const incrementPosition = () => {
   const currentPos = app.state.currentPosition;
   const nextPosition = currentPos + 1;
-
-  const updatePositionInGrid = (data) => {
-    const grid = data.grid.map((item, index) => (index === nextPosition) ?  1 : 0);
-    return { grid };
-  };
-
+  if (nextPosition === BOARD_WIDTH){
+    alert('game over!', app.state);
+    return;
+  }
+  const updatePositionInGrid = (data) => ({ grid: data.grid.map((item, index) => (index === nextPosition) ? 1 : 0) });
   setState({ currentPosition: nextPosition }, null);
   setState(null, updatePositionInGrid);
+
 };
 
-// const updateGrid = () => {
-//   const currentPos = app.state.currentPosition;
-//   const nextPos = currentPos + 1;
-//   board.data.board[currentPos] = 0;
-//   board.data.board[nextPos] = 1;
-//   return;
-// };
-console.log('initial state >>>',app());
-
-incrementPosition();
-console.log('state >>>',app());
-
-
-
-
-
-// this.setState(
-//   (state) => {
-//   const list = state.list.map((item, j) => {
-//     if (j === i){
-//       return item + 1;
-//     } else {
-//       return item;
-//     }
-//   });
-
-//   return {
-//     list,
-//   };
-// });
+$buttonNext.addEventListener('click', () => {
+  incrementPosition();
+});
