@@ -41,7 +41,10 @@ iteration 1:
 - [x] when character gets at final position finish the game.
 
 iteration 2:
-- [ ] ...
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [ ] add question object array with 2 alternatives each question to app.state
+- [ ] display one question with 2 alternatives
+- [ ] select an alternative and check if it is correct
+- [ ] if alternative is correct move character forward
+
+iteration 3:
+- [ ] if alternative is incorrect move character backward
