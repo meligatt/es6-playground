@@ -5,8 +5,10 @@ const $contentSlot = document.querySelector('#content');
 const BOARD_WIDTH = 5;
 const initialState = {
   currentPosition: -1,
+  currentQuestion: 0,
   grid: new Array(BOARD_WIDTH).fill(0),
-  questions: questions
+  questions: questions,
+  results: []
 };
 
 const app = () => {
@@ -29,25 +31,17 @@ const setState = (obj, callback) => {
   }
 };
 
-const incrementPosition = () => {
-  const currentPos = app.state.currentPosition;
-  const nextPosition = currentPos + 1;
-  if (nextPosition === BOARD_WIDTH){
-    alert('game over!', app.state);
-    return;
-  }
-  const updatePositionInGrid = (data) => ({ grid: data.grid.map((item, index) => (index === nextPosition) ? 1 : 0) });
-  setState({ currentPosition: nextPosition }, null);
-  setState(null, updatePositionInGrid);
-
-};
-
 const loadContent = (questions) => {
-  const list = questions.map((item) => {
+  const list = questions.map((item, index) => {
     const $li = document.createElement('li');
+    if (index === 0){
+      $li.setAttribute('style', 'display: block');
+    } else {
+      $li.setAttribute('style', 'display: none');
+    }
 
     const $pQuestion = document.createElement('p');
-    $pQuestion.textContent = item.question;
+    $pQuestion.textContent = `${index}) ${item.question}`;
 
     const $divAlternatives = document.createElement('div');
 
@@ -73,18 +67,63 @@ const loadContent = (questions) => {
     return $li;
   });
 
+  return list;
+};
+
+const checkAlternative = () => {
+  // get current question
+  const currentQuestion = app.state.currentQuestion;
+
+  // retrieve correct alternative from current question array
+  const correctAlternative = app.state.questions[currentQuestion]['correct'];
+
+  // compare with selected option
+  const selectedAlternative = parseInt(document.querySelector('input[name=alternative]:checked').value);
+
+  if (correctAlternative !== selectedAlternative){
+    app.state.results[currentQuestion] = false;
+    return;
+  }
+
+  app.state.results[currentQuestion] = true;
+};
+
+const loadNextQuestion = () => {
+  const $liCollection = $contentSlot.getElementsByTagName('li');
+
+  // display: none current li
+  const currentQuestion = app.state.currentQuestion;
+  $liCollection[currentQuestion].setAttribute('style', 'display: none');
+
+  // display: block next li
+  const nextQuestion = app.state.currentQuestion + 1;
+  $liCollection[nextQuestion].setAttribute('style', 'display: block');
+
+  setState({ currentQuestion: nextQuestion });
+};
+
+const incrementPosition = () => {
+  const currentPos = app.state.currentPosition;
+  const nextPosition = currentPos + 1;
+  if (nextPosition === BOARD_WIDTH){
+    alert('game over!', app.state);
+    return;
+  }
+  const updatePositionInGrid = (data) => ({ grid: data.grid.map((item, index) => (index === nextPosition) ? 1 : 0) });
+  setState({ currentPosition: nextPosition }, null);
+  setState(null, updatePositionInGrid);
+};
+
+window.addEventListener('load', () => {
+  const list = loadContent(app.state.questions);
   list.forEach((item) => {
     $contentSlot.appendChild(item);
   });
-
-  return $contentSlot;
-};
-
-
-window.addEventListener('load', () => {
-  loadContent(app.state.questions);
 });
 
 $buttonNext.addEventListener('click', () => {
+  checkAlternative();
+  loadNextQuestion();
   incrementPosition();
+  console.log(app.state);
 });
