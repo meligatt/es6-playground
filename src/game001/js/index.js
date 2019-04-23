@@ -1,6 +1,7 @@
 const questions = require('./data.js');
 const $buttonNext = document.querySelector('#next');
 const $contentSlot = document.querySelector('#content');
+const $gridSlot = document.querySelector('#grid');
 
 const BOARD_WIDTH = 5;
 const initialState = {
@@ -115,6 +116,11 @@ const incrementGridPosition = () => {
   setState(null, updatePositionInGrid);
 };
 
+const render = () => {
+  // const currentPosition = app.state.currentPosition;
+  $gridSlot.textContent = app.state.grid;
+};
+
 window.addEventListener('load', () => {
   const list = loadContent(app.state.questions);
   list.forEach((item) => {
@@ -130,4 +136,5 @@ $buttonNext.addEventListener('click', () => {
   if (app.state.currentPosition < BOARD_WIDTH){
     loadNextQuestion();
   }
+  render();
 });
