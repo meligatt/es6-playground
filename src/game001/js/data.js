@@ -6,7 +6,7 @@ const data = [
       'She went alone',
       'Anakin, Kenobi, Luminara and Ki-Adi-Mundi'
     ],
-    'correct': 1
+    'correct': 0
   },
   {
     'id': 1,
@@ -60,7 +60,7 @@ const data = [
       'Anakin Skywalker',
       'Barris Offee'
     ],
-    'correct': 2
+    'correct': 0
   },
   {
     'id': 7,
@@ -87,7 +87,7 @@ const data = [
       'Luminara offered her to be her Jedi master',
       'Luminara informed Tano of the fact that her master never gave up on her.'
     ],
-    'correct': 1
+    'correct': 0
   }
 ];
 module.exports = data;

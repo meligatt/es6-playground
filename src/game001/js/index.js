@@ -70,7 +70,7 @@ const loadContent = (questions) => {
   return list;
 };
 
-const checkAlternative = () => {
+const isAlternativeCorrect = () => {
   // get current question
   const currentQuestion = app.state.currentQuestion;
 
@@ -82,10 +82,11 @@ const checkAlternative = () => {
 
   if (correctAlternative !== selectedAlternative){
     app.state.results[currentQuestion] = false;
-    return;
+    return false;
   }
 
   app.state.results[currentQuestion] = true;
+  return true;
 };
 
 const loadNextQuestion = () => {
@@ -102,7 +103,7 @@ const loadNextQuestion = () => {
   setState({ currentQuestion: nextQuestion });
 };
 
-const incrementPosition = () => {
+const incrementGridPosition = () => {
   const currentPos = app.state.currentPosition;
   const nextPosition = currentPos + 1;
   if (nextPosition === BOARD_WIDTH){
@@ -122,8 +123,11 @@ window.addEventListener('load', () => {
 });
 
 $buttonNext.addEventListener('click', () => {
-  checkAlternative();
-  loadNextQuestion();
-  incrementPosition();
-  console.log(app.state);
+  const correct = isAlternativeCorrect();
+  if (correct){
+    incrementGridPosition();
+  }
+  if (app.state.currentPosition < BOARD_WIDTH){
+    loadNextQuestion();
+  }
 });
