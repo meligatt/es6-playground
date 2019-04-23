@@ -43,35 +43,41 @@ const incrementPosition = () => {
 };
 
 const loadContent = (questions) => {
-  const list = questions.map((item, index) => {
-
+  const list = questions.map((item) => {
     const $li = document.createElement('li');
 
-    // create p element with question
-    const $p = document.createElement('p');
-    $p.textContent = item.question;
+    const $pQuestion = document.createElement('p');
+    $pQuestion.textContent = item.question;
 
-    // create input + label with alternative
-    const $input = document.createElement('input');
-    $input.id = `radio-${index}`;
-    $input.type = 'radio';
-    $input.value = index;
+    const $divAlternatives = document.createElement('div');
 
-    const $label = document.createElement('label');
-    $label.htmlFor = `radio-${index}`;
-    $label.textContent = item.alternatives[index];
+    item.alternatives.forEach((alternative, index) => {
+      const id = `${item.id}${index}`;
 
-    $li.appendChild($p);
-    $li.appendChild($input);
-    $li.appendChild($label);
+      const $input = document.createElement('input');
+      $input.id = id;
+      $input.type = 'radio';
+      $input.value = index;
+      $input.name = 'alternative';
+
+      const $label = document.createElement('label');
+      $label.htmlFor = id;
+      $label.textContent = alternative;
+
+      $divAlternatives.appendChild($input);
+      $divAlternatives.appendChild($label);
+    });
+
+    $li.appendChild($pQuestion);
+    $li.appendChild($divAlternatives);
     return $li;
   });
 
+  list.forEach((item) => {
+    $contentSlot.appendChild(item);
+  });
 
-  // $contentSlot.appendChild($li);
-
-  // return $contentSlot;
-  return list;
+  return $contentSlot;
 };
 
 
