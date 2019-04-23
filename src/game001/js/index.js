@@ -42,45 +42,41 @@ const incrementPosition = () => {
 
 };
 
-const loadContent = (index, item) => {
-  // create li element
-  const $li = document.createElement('li');
+const loadContent = (questions) => {
+  const list = questions.map((item, index) => {
 
-  // create p element with question
-  const $p = document.createElement('p');
-  $p.textContent = item.question;
+    const $li = document.createElement('li');
 
-  // loop for the alternatives to add them from item.alternatives array.
-  // create input + label with alternative
-  const alternativeIndex = 0;
-  const $input = document.createElement('input');
-  $input.id = `radio-${alternativeIndex}`;
-  $input.type = 'radio';
-  $input.value = index;
+    // create p element with question
+    const $p = document.createElement('p');
+    $p.textContent = item.question;
 
-  const $label = document.createElement('label');
-  $label.htmlFor = `radio-${alternativeIndex}`;
-  $label.textContent = item.alternatives[alternativeIndex];
+    // create input + label with alternative
+    const $input = document.createElement('input');
+    $input.id = `radio-${index}`;
+    $input.type = 'radio';
+    $input.value = index;
 
-  // <li>
-  //  <p id="question">Question goes here</p>
-  //  <input type="radio" id="q1" name="question" value="1">
-  //  <label for="q1">Option 1</label>
-  //  <input type="radio" id="q1" name="question" value="1">
-  //  <label for="q1">Option 1</label>
-  // </li>
-  $li.appendChild($p);
-  $li.appendChild($input);
-  $li.appendChild($label);
+    const $label = document.createElement('label');
+    $label.htmlFor = `radio-${index}`;
+    $label.textContent = item.alternatives[index];
 
-  $contentSlot.appendChild($li);
+    $li.appendChild($p);
+    $li.appendChild($input);
+    $li.appendChild($label);
+    return $li;
+  });
 
-  return $contentSlot;
+
+  // $contentSlot.appendChild($li);
+
+  // return $contentSlot;
+  return list;
 };
 
 
 window.addEventListener('load', () => {
-  console.log(loadContent(0, app.state.questions[0]));
+  loadContent(app.state.questions);
 });
 
 $buttonNext.addEventListener('click', () => {
