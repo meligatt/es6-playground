@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "10.9.0"
+  },
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack --watch",
-    "dev": "run-p build start",
-    "test": "jest"
+    "start": "node ./server.js",
+    "start:dev": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack --config webpack.config.js --mode production",
+    "dev": "run-p build start:dev",
+    "test": "jest",
+    "postinstall": "yarn build"
   },
   "author": "melissa gattoni",
   "license": "ISC",
@@ -27,5 +32,8 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
     "yarn-run-all": "^3.1.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }

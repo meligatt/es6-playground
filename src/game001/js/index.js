@@ -1,9 +1,11 @@
 const questions = require('./data.js');
+
+const BOARD_WIDTH = 5;
+
 const $buttonNext = document.querySelector('#next');
 const $contentSlot = document.querySelector('#content');
 const $gridSlot = document.querySelector('#grid');
 
-const BOARD_WIDTH = 5;
 const initialState = {
   currentPosition: -1,
   currentQuestion: 0,
@@ -15,6 +17,7 @@ const initialState = {
 const app = () => {
   return app.state;
 };
+
 app.state = { ...initialState };
 
 const setState = (obj, callback) => {
@@ -117,7 +120,6 @@ const incrementGridPosition = () => {
 };
 
 const render = () => {
-  // const currentPosition = app.state.currentPosition;
   $gridSlot.textContent = app.state.grid;
 };
 

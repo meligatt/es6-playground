@@ -14,7 +14,7 @@ module.exports = {
     game003: './src/game003/js/index.js',
     snippets: './src/snippets/js/app.js'
   },
-  output:{
+  output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].bundle.js'
   },
@@ -41,5 +41,5 @@ module.exports = {
   stats: {
     colors: true
   },
-  devtool: 'source-map',
+  devtool: 'source-map'
 };
