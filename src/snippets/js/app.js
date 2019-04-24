@@ -13,7 +13,7 @@
 //     var monthlyRate = rate / 100 / 12;
 //   }
 //   var monthlyPayment = principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate), years * 12 )));
-  
+
 //   return monthlyPayment;
 // };
 
@@ -34,7 +34,7 @@
 //     monthlyRate = rate / 100 / 12;
 //   }
 //   let monthlyPayment = principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate), years * 12 )));
-  
+
 //   return monthlyPayment;
 // };
 
@@ -54,11 +54,11 @@
 //     monthlyRate = rate / 100 / 12;
 //   }
 //   let monthlyPayment = principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate), years * 12 )));
-  
-//   return { principal: principal, 
-//     years: years, 
-//     rate: rate, 
-//     monthlyPayment: monthlyPayment, 
+
+//   return { principal: principal,
+//     years: years,
+//     rate: rate,
+//     monthlyPayment: monthlyPayment,
 //     monthlyRate: monthlyRate };
 // };
 
@@ -147,13 +147,15 @@
 // ******************
 // using Classes with getters
 // ******************
-
 import { Mortgage } from './classes/Mortgage';
-const mortgage = new Mortgage(2000, 4, 12);
+const App = () => {
+  const mortgage = new Mortgage(2000, 4, 12);
 
-const monthlyPayment = mortgage.monthlyPayment;
-console.log('monthlyPayment >>> ', monthlyPayment);
+  const monthlyPayment = mortgage.monthlyPayment;
+  console.log('monthlyPayment >>> ', monthlyPayment);
 
-const amortization = mortgage.amortization;
-console.log('amortization >>> ', amortization);
+  const amortization = mortgage.amortization;
+  console.log('amortization >>> ', amortization);
+};
 
+export default App;
